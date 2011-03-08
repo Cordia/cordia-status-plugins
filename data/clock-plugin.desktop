@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Clock Status Menu Plugin
+Comment=Plugin showing current time in the status menu area
+Type=default
+X-Path=status-area-applet-clock.so
