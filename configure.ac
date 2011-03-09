@@ -24,6 +24,10 @@ PKG_CHECK_MODULES(HD, libhildondesktop-1 >= 2.1.31)
 AC_SUBST(HD_LIBS)
 AC_SUBST(HD_CFLAGS)
 
+PKG_CHECK_MODULES(OSSO, libosso >= 2.20)
+AC_SUBST(OSSO_LIBS)
+AC_SUBST(OSSO_CFLAGS)
+
 PKG_CHECK_MODULES(DBUS, dbus-glib-1 >= 0.78)
 AC_SUBST(DBUS_LIBS)
 AC_SUBST(DBUS_CFLAGS)
@@ -35,6 +39,8 @@ icon48dir=`$PKG_CONFIG libhildondesktop-1 --variable=prefix`/share/icons/hicolor
 icon18dir=`$PKG_CONFIG libhildondesktop-1 --variable=prefix`/share/icons/hicolor/18x18/hildon
 hildondesktoplibdir=`$PKG_CONFIG libhildondesktop-1 --variable=hildondesktoplibdir`
 hildonstatusmenudesktopentrydir=`$PKG_CONFIG libhildondesktop-1 --variable=hildonstatusmenudesktopentrydir`
+
+vapidir=`$PKG_CONFIG vala-0.10 --variable=vapidir`
 
 # Localization-related
 AC_PROG_INTLTOOL([0.40.5])
@@ -51,6 +57,8 @@ AC_SUBST(icon48dir)
 AC_SUBST(icon18dir)
 AC_SUBST(hildondesktoplibdir)
 AC_SUBST(hildonstatusmenudesktopentrydir)
+
+AC_SUBST(vapidir)
 
 AC_OUTPUT([
 	Makefile
