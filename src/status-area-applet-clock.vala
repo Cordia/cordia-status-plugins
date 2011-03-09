@@ -24,6 +24,10 @@ class ClockStatusMenuItem : HD.StatusMenuItem
 		show_all ();
 	}
 
+	public ClockStatusMenuItem() {
+		Object();
+	}
+
 	construct {
 		// Gettext hook-up
 		Intl.setlocale (LocaleCategory.ALL, "");
