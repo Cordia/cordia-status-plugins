@@ -29,3 +29,6 @@ stamp-h1
 *.stamp
 .libs/
 src/status-area-applet-clock.c
+*.bak
+.anjuta_sym_db.db
+.anjuta/
