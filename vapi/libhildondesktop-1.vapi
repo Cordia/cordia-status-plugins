@@ -24,7 +24,7 @@ namespace HD {
 		public unowned DBus.RawConnection get_dbus_connection (DBus.BusType type, DBus.Error error);
 		public unowned DBus.Connection get_dbus_g_connection (DBus.BusType type) throws GLib.Error;
 		public unowned string get_dl_filename ();
-		public uint heartbeat_signal_add (uint mintime, uint maxtime, GLib.SourceFunc source_func, void* data, GLib.DestroyNotify destroy);
+		public uint heartbeat_signal_add (uint mintime, uint maxtime, GLib.SourceFunc source_func, GLib.DestroyNotify? destroy);
 		public void set_resize_type (HD.HomePluginItemResizeType resize_type);
 		public void set_settings (bool settings);
 		[NoAccessorMethod]
@@ -138,7 +138,7 @@ namespace HD {
 		public unowned DBus.RawConnection get_dbus_connection (DBus.BusType type, DBus.Error error);
 		public unowned DBus.Connection get_dbus_g_connection (DBus.BusType type) throws GLib.Error;
 		public unowned string get_dl_filename ();
-		public uint heartbeat_signal_add (uint mintime, uint maxtime, GLib.SourceFunc source_func, void* data, GLib.DestroyNotify destroy);
+		public uint heartbeat_signal_add (uint mintime, uint maxtime, GLib.SourceFunc source_func, GLib.DestroyNotify? destroy);
 		public void set_status_area_icon (Gdk.Pixbuf icon);
 		public void set_status_area_widget (Gtk.Widget widget);
 		[NoAccessorMethod]
