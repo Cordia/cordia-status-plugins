@@ -4,12 +4,17 @@ class ClockStatusMenuItem : HD.StatusMenuItem
 
 	// Widgets
 	Hildon.Button button;
+	Gtk.Label time_label;
+
+	uint timeout_id;
 
 	// GConf and Osso context
 	Osso.Context osso;
 	GConf.Client gconf;
 
 	private void create_widgets () {
+		Gtk.HBox status_area_box;
+		
 		// Status menu button
 		button = new Hildon.Button.with_text (Hildon.SizeType.FINGER_HEIGHT,
 		                                      Hildon.ButtonArrangement.VERTICAL,
@@ -18,14 +23,34 @@ class ClockStatusMenuItem : HD.StatusMenuItem
 		button.set_alignment (0.0f, 0.5f, 1.0f, 1.0f);
 		button.set_style (Hildon.ButtonStyle.PICKER);
 		//button.clicked.connect (button_clicked_cb);
-
 		add (button);
+
+		// Status area widget
+		status_area_box = new Gtk.HBox (false, 0);
+		time_label = new Gtk.Label("xx:xx");
+		status_area_box.pack_start (time_label, false, false, 0);
+		status_area_box.show_all ();
+		set_status_area_widget (status_area_box);
+
+		timeout_cb ();
+		timeout_id = heartbeat_signal_add (0, 60, timeout_cb, null);
 
 		show_all ();
 	}
 
 	public ClockStatusMenuItem() {
 		Object();
+	}
+
+	private bool timeout_cb() {
+		Gdk.threads_enter ();
+
+		var time = new DateTime.now_local ();
+		this.button.value = time.format("%a, %x");
+		this.time_label.set_markup (time.format("<span font_desc=\"24\">%H:%M</span>"));
+
+		Gdk.threads_leave ();
+		return true;
 	}
 
 	construct {
