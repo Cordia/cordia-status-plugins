@@ -33,7 +33,7 @@ class ClockStatusMenuItem : HD.StatusMenuItem
 		set_status_area_widget (status_area_box);
 
 		timeout_cb ();
-		timeout_id = heartbeat_signal_add (0, 60, timeout_cb, null);
+		timeout_id = heartbeat_signal_add (0, 1, timeout_cb, null);
 
 		show_all ();
 	}
