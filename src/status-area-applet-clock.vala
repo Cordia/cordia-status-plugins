@@ -47,7 +47,7 @@ class ClockStatusMenuItem : HD.StatusMenuItem
 
 		var time = new DateTime.now_local ();
 		this.button.value = time.format("%a, %x");
-		this.time_label.set_markup (time.format("<span font_desc=\"24\">%H:%M</span>"));
+		this.time_label.set_markup (time.format("<span font_desc=\"24\" color=\"white\">%H:%M</span>"));
 
 		Gdk.threads_leave ();
 		return true;
