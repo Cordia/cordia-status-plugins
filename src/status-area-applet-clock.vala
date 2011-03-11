@@ -8,10 +8,6 @@ class ClockStatusMenuItem : HD.StatusMenuItem
 
 	uint timeout_id;
 
-	// GConf and Osso context
-	Osso.Context osso;
-	GConf.Client gconf;
-
 	private void create_widgets () {
 		Gtk.HBox status_area_box;
 		
@@ -58,15 +54,6 @@ class ClockStatusMenuItem : HD.StatusMenuItem
 		Intl.setlocale (LocaleCategory.ALL, "");
 		Intl.bindtextdomain (Config.GETTEXT_PACKAGE, Config.LOCALEDIR);
 		Intl.textdomain (Config.GETTEXT_PACKAGE);
-
-		// GConf hook-up
-		gconf = GConf.Client.get_default ();
-
-		// Osso hook-up
-		osso = new Osso.Context (STATUSMENU_CLOCK_LIBOSSO_SERVICE_NAME,
-		                         Config.VERSION,
-		                         true,
-		                         null);
 
 		create_widgets ();
 	}
