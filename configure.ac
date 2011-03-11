@@ -3,7 +3,7 @@ dnl Process this file with autoconf to produce a configure script.
 AC_INIT(src/status-area-applet-clock.vala)
 AC_CONFIG_HEADERS([config.h])
 
-PACKAGE=cordia-clock-plugin
+PACKAGE=cordia-status-plugins
 VERSION=0.0.1
 
 AM_INIT_AUTOMAKE($PACKAGE, $VERSION)
