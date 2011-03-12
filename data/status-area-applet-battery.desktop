@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Battery
+Comment=Plugin showing battery charge in the status menu area
+Type=default
+X-Path=status-area-applet-battery.so

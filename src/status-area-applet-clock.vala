@@ -1,8 +1,5 @@
 class ClockStatusMenuItem : HD.StatusMenuItem
 {
-	private const string STATUSMENU_CLOCK_LIBOSSO_SERVICE_NAME = "clock_status_area_plugin";
-
-	// Widgets
 	Hildon.Button button;
 	Gtk.Label time_label;
 
